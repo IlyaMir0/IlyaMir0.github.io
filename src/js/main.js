@@ -22,7 +22,11 @@ ymaps.ready(function () {
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
+<<<<<<< HEAD
             iconImageHref: './assets/icons/Pin.png',
+=======
+          /*  iconImageHref: './assets/icons/Pin.png', */
+>>>>>>> d2fdc48ae53c55dc1e9ed0b4ce0129bb4a5e16b2
             // Размеры метки.
             iconImageSize: [30, 42],
             // Смещение левого верхнего угла иконки относительно
@@ -48,7 +52,11 @@ ymaps.ready(function () {
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
+<<<<<<< HEAD
             iconImageHref: './assets/icons/Pin.png',
+=======
+             /*  iconImageHref: './assets/icons/Pin.png', */
+>>>>>>> d2fdc48ae53c55dc1e9ed0b4ce0129bb4a5e16b2
             // Размеры метки.
             iconImageSize: [30, 42],
             // Смещение левого верхнего угла иконки относительно
