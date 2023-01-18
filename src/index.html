@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/fonts/fonts.css">
+  <link rel="stylesheet" href="./styles.css">
+  <title>TestTask</title>
+</head>
+<body>
+  <div class="header">
+    <div class="header__inner container">
+      <div class="header-row">
+        <div class="header__nav">
+          <a class="header__nav-menu" href="#">Каталог</a>
+          <a class="header__nav-menu" href="#">О компании</a>
+          <a class="header__nav-menu" href="#">Магазины</a>
+        </div>
+        <div class="header__logo"></div>
+        <div class="header__select">
+          <div class="header__select-search"></div>
+          <div class="header__select-account"></div>
+          <div class="header__select-favorite">
+            <div class="header__select-cart__count">4</div>
+          </div>
+          <div class="header__select-cart">
+            <div class="header__select-cart__count">8</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="order container">
+    <div class="breadcrumbs">
+      <ul class="breadcrumbs__items">
+        <li class="breadcrumbs__item">Главная</li>
+        <li class="breadcrumbs__item active">Оформление заказа</li>
+      </ul>
+    </div>
+    <div class="order__items">
+        <div class="order__item">
+          <div class="order__item-text">
+            <h1 class="order__item-title">
+              Оформление заказа
+            </h1>
+            <div class="order__item-description">
+              Есть аккаунт? <span class="order__item-description__enter"> Войти </span>
+            </div>
+          </div>
+          <h2 class="order__subtitle"> <span class="js-product-count">2</span> <span class="js-declination"> товара
+            </span> на сумму <span class="js-title-price">25 000</span>₽</h2>
+          <div class="order__item-card js-card">
+            <div class="order__item-card__body js-body">
+              <div class="order__item-product">
+                <img src="./assets/images/jacket.png" class="order__item-product__photo">
+                </img>
+                <div class="order__item-product__description">
+                  <h4 class="order__item-product__title">
+                    Утепленная стеганная куртка женская Top Hills
+                    <div class="order__item-product_decline js-remove_mobile"></div>
+                  </h4>
+                  <div class="order__item-product_wrapper">
+                    <div class="order__item-product__property">
+                      <span class="reg12">Артикул</span> 512-05
+                    </div>
+                    <div class="order__item-product__property">
+                      <span class="reg12">Сезон</span> Осень-зима
+                    </div>
+                    <div class="order__item-product__property-size">
+                      <div class="order__item-product__property-size__choice">XS</div>
+                      <div class="order__item-product__property-size__choice">S</div>
+                      <div class="order__item-product__property-size__choice active">M</div>
+                      <div class="order__item-product__property-size__choice">L</div>
+                      <div class="order__item-product__property-size__choice">XL</div>
+                    </div>
+                    <div class="order__item-product__choose">
+                      <fieldset class="order__item-product_wrap">
+                        <div>
+                          <input type="radio" name="color" id="color1" checked> <label for="color1"></label>
+                        </div>
+                        <div>
+                          <input type="radio" name="color" id="color2"> <label for="color2"></label>
+                        </div>
+                        <div>
+                          <input type="radio" name="color" id="color3"> <label for="color3"></label>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="order__item-property_mobile">
+                <div class="order__item-product__property">
+                  <span class="reg12">Артикул</span> 512-05
+                </div>
+                <div class="order__item-product__property">
+                  <span class="reg12">Сезон</span> Осень-зима
+                </div>
+                <div class="order__item-product__property-size">
+                  <div class="order__item-product__property-size__choice">XS</div>
+                  <div class="order__item-product__property-size__choice">S</div>
+                  <div class="order__item-product__property-size__choice active">M</div>
+                  <div class="order__item-product__property-size__choice">L</div>
+                  <div class="order__item-product__property-size__choice">XL</div>
+                </div>
+                <div class="order__item-product__choose">
+                  <fieldset class="order__item-product_wrap">
+                    <div>
+                      <input type="radio" name="color_m" id="color1" checked> <label for=""></label>
+                    </div>
+                    <div>
+                      <input type="radio" name="color_m" id="color2"> <label for=""></label>
+                    </div>
+                    <div>
+                      <input type="radio" name="color_m" id="color3"> <label for=""></label>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="order__item-wrapper">
+                <div class="order__item-price">
+                  <div class="order__item-price__old"> <span class="js-price-old">12 000</span> ₽ </div>
+                  <h4 class="order__item-price__new"> <span class="js-price-new">10 000</span> ₽ </h4>
+                </div>
+                <div class="order__item-amount">
+                  <div class="order__item-amount__minus js-minus"></div>
+                  <div class="order__item-number js-count">2</div>
+                  <div class="order__item-amount__plus js-plus"></div>
+                </div>
+                <div class="order__item-price">
+                  <div class="order__item-price__old"> <span class="js-price-old-result">24 000</span> ₽</div>
+                  <h4 class="order__item-price__new"> <span class="js-price-new-result">20 000</span> ₽</h4>
+                </div>
+                <div class="order__item-decline js-remove"></div>
+              </div>
+            </div>
+            <div class="js-banner" style="display: none;">
+              <div class="order__item-banner">
+                <div class="order__item-banner__text">
+                  <div class="order__item-banner__text-information">
+                    Товар <b>Утепленная стеганная куртка женская Top Hills</b> был удален из корзины.
+                  </div>
+                  <div class="order__item-banner__text-restore js-recovery">Восстановить.</div>
+                  <div class="order__item-banner__text-decline js-decline"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order__item-card js-card">
+            <div class="order__item-card__body js-body">
+              <div class="order__item-product">
+                <img src="./assets/images/hat.png" class="order__item-product__photo"></img>
+                <div class="order__item-product__description">
+                  <h4 class="order__item-product__title">
+                    Вязанная шапка Zolla
+                    <div class="order__item-product_decline js-remove_mobile"></div>
+                  </h4>
+                  <div class="order__item-product_wrapper">
+                    <div class="order__item-product__property">
+                      <span class="reg12">Артикул</span> 512-05
+                    </div>
+                    <div class="order__item-product__property">
+                      <span class="reg12">Сезон</span> Осень-зима
+                    </div>
+                    <div class="order__item-product__property-size">
+                      <div class="order__item-product__property-size__choice">XS</div>
+                      <div class="order__item-product__property-size__choice">S</div>
+                      <div class="order__item-product__property-size__choice active">M</div>
+                      <div class="order__item-product__property-size__choice disabled">L</div>
+                      <div class="order__item-product__property-size__choice disabled">XL</div>
+                    </div>
+                    <div class="order__item-product__choose">
+                      <fieldset class="order__item-product_wrap">
+                        <div>
+                          <input type="radio" name="hat" id="" checked> <label for="color1"></label>
+                        </div>
+                        <div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="order__item-property_mobile">
+                <div class="order__item-product__property">
+                  <span class="reg12">Артикул</span> 512-05
+                </div>
+                <div class="order__item-product__property">
+                  <span class="reg12">Сезон</span> Осень-зима
+                </div>
+                <div class="order__item-product__property-size">
+                  <div class="order__item-product__property-size__choice">XS</div>
+                  <div class="order__item-product__property-size__choice">S</div>
+                  <div class="order__item-product__property-size__choice active">M</div>
+                  <div class="order__item-product__property-size__choice disabled">L</div>
+                  <div class="order__item-product__property-size__choice disabled">XL</div>
+                </div>
+                <div class="order__item-product__choose">
+                  <fieldset class="order__item-product_wrap">
+                    <div>
+                      <input type="radio" id="" checked> <label for=""></label>
+                    </div>
+                    <div>
+                  </fieldset>
+                </div>
+              </div>
+              <div class="order__item-wrapper">
+                <div class="order__item-price">
+                  <h4 class="order__item-price__new"> <span class="js-price-new">500</span>₽</h4>
+                </div>
+                <div class="order__item-amount">
+                  <div class="order__item-amount__minus js-minus"></div>
+                  <div class="order__item-number js-count">1</div>
+                  <div class="order__item-amount__plus js-plus"></div>
+                </div>
+                <div class="order__item-price">
+                  <h4 class="order__item-price__new"> <span class="js-price-new-result">500</span>₽</h4>
+                </div>
+                <div class="order__item-decline js-remove"></div>
+              </div>
+            </div>
+            <div class="js-banner" style="display: none;">
+              <div class="order__item-banner">
+                <div class="order__item-banner__text">
+                  <div class="order__item-banner__text-information">
+                    Товар <b>Утепленная стеганная куртка женская Top Hills</b> был удален из корзины.
+                  </div>
+                  <div class="order__item-banner__text-restore js-recovery">Восстановить.</div>
+                  <div class="order__item-banner__text-decline js-decline"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order__item">
+          <div class="order__card">
+            <div class="order__card-items">
+              <h4 class="order__card-title_goods"> Товары </h4>
+              <h4 class="order__card-price_full"> <b><span class="js-price">24 500</span> ₽</b> </h4>
+              <h4 class="order__card-title_discount">Скидка</h4>
+              <h4 class="order__card-price_discount"> - <span class="js-discount">4 500</span> ₽</h4>
+              <h5 class="order__card-title_share">Акции</h5>
+              <h5 class="order__card-price_share"> - <span class="js-share">4 000</span> ₽</h5>
+              <h5 class="order__card-title_promo">Промокод</h5>
+              <h5 class="order__card-price_promo"> - <span class="js-promo">500</span> ₽</h5>
+              <h4 class="order__card-title_delivery">Доставка</h4>
+              <h4 class="order__card-price_delivery"><b> 200 ₽</b> </h4>
+            </div>
+            <div class="order__card-accept">
+              <h4 class="order__card-title">Получить товар со склада</h4>
+              <div class="order__wrapper">
+                <input type="checkbox" id="toggle-button" class="order__wrapper-checkbox">
+                <label for="order__wrapper-checkbox" class="order__wrapper-toggle"></label>
+              </div>
+            </div>
+            <p class="order__card-description">Сроки получения могут измениться</p>
+            <div class="order__card-items">
+              <h2 class="order__card-title_total"> <b>Итого:</b> </h2>
+              <h2 class="order__card-price_total"> <b> <span class="js-price-result">20 700</span> ₽</b> </h2>
+            </div>
+            <form name="form" class="order__card-form js-form">
+              <input class="order__card-form__promo field" name="input" type="text" placeholder="Введите промокод">
+            </form>
+            <button class="order__card-btn js-submit" type="submit"> Оформить заказ</button>
+            <div class="order__card-btn__description">
+              Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с политикой конфиденциальности.
+            </div>
+          </div>
+        </div>
+
+        <div class="information__item">
+          <div class="infomation__items">
+            <h2 class="information__title">
+              Контактные данные
+            </h2>
+            <div class="information__form">
+              <div class="formfield formfield_error">
+                <input class="formfield__input js-fio" type="text" name="name" placeholder="Имя">
+                <span class="formfield__placeholder">
+                  Имя
+                </span>
+                <span class="formfield__label"></span>
+              </div>
+              <div class="formfield">
+                <input class="formfield__input js-fio" type="text" name="second-name" placeholder="Фамилия">
+                <span class="formfield__placeholder">
+                  Фамилия
+                </span>
+              </div>
+              <div class="formfield formfield__error">
+                <input class="formfield__input js-number" type="text" name="fio" placeholder="Телефон">
+                <span class="formfield__placeholder">
+                  Телефон
+                </span>
+                <span class="formfield__label">
+                  erorr text
+                </span>
+              </div>
+              <div class="formfield">
+                <input class="formfield__input" type="text" name="fio" placeholder="Email">
+                <span class="formfield__placeholder">
+                  Email
+                </span>
+              </div>
+            </div>
+            <div class="formfield icon-search">
+              <input class="formfield__input js-address" type="text" name="address" placeholder="Адрес доставки">
+              <span class="formfield__placeholder">
+                Адрес доставки
+              </span>
+              <div class="information__item">
+                <div id="map_1" class="information__item-map">
+                </div>
+              </div>
+            </div>
+            <h2 class="information__title">Оплата</h2>
+            <fieldset class="information__choose-wrap">
+              <div class="informtaion__choose">
+                <div class="information__choose-radio">
+                  <input type="radio" name="rb" id="payment" checked> <label for="">Наличными курьеру</label>
+                </div>
+                <div class="information__choose-radio">
+                  <input type="radio" name="rb" id="payment"> <label for="">Картой курьеру</label>
+                </div>
+                <div class="information__choose-radio">
+                  <input type="radio" name="rb" id="payment"> <label for="">Картой онлайн</label>
+                </div>
+            </fieldset>
+          </div>
+          <h2 class="information__title">Комментарии к заказу</h2>
+          <form class="information__title-form" action="./" method="post">
+            <textarea class="information__title-form_text js-comment" onkeydown="countLetters();" required
+              placeholder="Комментарий к заказу" name="comment" id="comment"></textarea>
+            <label class="information__title-form_comment" for="comment">Комментарий</label>
+            <div class="information__subtitle ">Использовано <span class="js-symbols">0</span>/142 символов</div>
+          </form>
+        </div>
+        <div class="information__item">
+          <div id="map_2" class="information__item-map">
+          </div>
+        </div>
+    </div>
+
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="footer__inner container">
+      <div class="footer__items">
+        <div class="footer__item">
+          <h2 class="footer__title">Скидка 10% за подписку на наши новости</h2>
+          <div class="formfield">
+            <p class="formfield__wrap">
+              <input class="formfield__input js-address" type="text" name="address" placeholder="Адрес доставки">
+            <h5 class="formfield__text">Подписаться</h5>
+            </p>
+            <p class="formfield__placeholder-visible">
+              Нажимая кнопку “Подписаться”, Вы соглашаетесь с <ins>политикой конфиденциальности</ins>
+            </p>
+          </div>
+        </div>
+        <div class="footer__item-references">
+          <a class="footer__item-reference">Каталог</a>
+          <a class="footer__item-reference">Оплата и доставка</a>
+          <a class="footer__item-reference">Telegramm</a>
+          <a class="footer__item-reference">О компании</a>
+          <a class="footer__item-reference">Условия возврата</a>
+          <a class="footer__item-reference">WhatsApp</a>
+          <a class="footer__item-reference">Магазины</a>
+          <a class="footer__item-reference">Бонусная система</a>
+          <a class="footer__item-reference">Youtube</a>
+          <a class="footer__item-reference">Новости</a>
+          <a class="footer__item-reference">Подарочный сертификат</a>
+          <a class="footer__item-reference">VK</a>
+        </div>
+        <!-- <a href="#" class="footer__back"></a> -->
+      </div>
+      <div class="footer__item-info">
+        <div class="footer__item-info_text">© All rights reserved</div>
+        <div class="footer__item-info_text">Публичная оферта</div>
+        <div class="footer__item-info_text">Политика конфиденциальности</div>
+        <div class="footer__item-info_text"> Сделано в студии <span class="footer__item-info_icon"></span> 5 углов</div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&width=100&amp;" type="text/javascript"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

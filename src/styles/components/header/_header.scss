@@ -1,0 +1,152 @@
+.header {
+    width: 100%;
+    border-bottom: 1px solid $Secondary-gray;
+    padding: 26px 0px 25px 0px;
+    margin-bottom: 50px;
+    &-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 40px;
+        @media screen and (max-width: 640px) {
+            gap: 20px;
+        }
+        @media screen and (max-width: 540px) {
+            display: none;
+        }
+        &-menu {
+            font-size: 14px;
+            transition: all 0.3s ease-in-out;
+            padding-bottom: 0px;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+        }
+    }
+
+    &__logo {
+        text-decoration: none;
+
+        &::before {
+            font-family: "icon";
+            content: "\e904";
+            font-size: 22px;
+            color: $Primary-black;
+            cursor: pointer;
+        }
+    }
+
+    &__select {
+        display: flex;
+        gap: 30px;
+        @media screen and (max-width: 640px) {
+            gap: 20px;
+        }
+
+        &-search {
+            @media screen and (max-width: 540px) {
+                display: none;
+            }
+            &::before {
+                font-family: icon;
+                content: "\e906";
+                font-size: 20px;
+                color: $Primary-black;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover::before {
+                color: $Primary-gray;
+            }
+        }
+
+        &-account {
+            @media screen and (max-width: 540px) {
+                display: none;
+            }
+            &::before {
+                font-family: icon;
+                content: "\e905";
+                font-size: 20px;
+                color: $Primary-black;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover::before {
+                color: $Primary-gray;
+            }
+        }
+
+        &-favorite {
+            @media screen and (max-width: 540px) {
+                display: none;
+            }
+            position: relative;
+
+            &::before {
+                font-family: icon;
+                content: "\e903";
+                font-size: 20px;
+                color: $Primary-black;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &::after {
+                @extend %numbers;
+                content: "";
+            }
+
+            &:hover::before {
+                color: $Primary-gray;
+            }
+
+            &__count {
+                @extend %count;
+            }
+        }
+
+        &-cart {
+            position: relative;
+            &::before {
+                font-family: icon;
+                content: "\e902";
+                font-size: 20px;
+                color: $Primary-black;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                @media screen and (max-width: 540px) {
+                    font-size: 28px;
+                }
+            }
+
+            &::after {
+                @extend %numbers;
+                content: "";
+                @media screen and (max-width: 540px) {
+                    display: none;
+                }
+            }
+
+            &:hover::before {
+                color: $Primary-gray;
+            }
+
+            &__count {
+                @extend %count;
+                @media screen and (max-width: 540px) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

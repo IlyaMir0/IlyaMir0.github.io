@@ -1,0 +1,30 @@
+%numbers {
+    display: inline-flex;
+    color: white;
+    left: 12px;
+    justify-content: center;
+    top: -4px;
+    font-size: 8px;
+    align-items: center;
+    background-color: black;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+%count {
+    cursor: pointer;
+    position: absolute;
+    display: inline-flex;
+    color: white;
+    left: 12px;
+    justify-content: center;
+    top: -4px;
+    font-size: 8px;
+    align-items: center;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 1;
+}
