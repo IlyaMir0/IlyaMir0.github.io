@@ -89,6 +89,29 @@
   padding: 26px 0px 25px 0px;
   margin-bottom: 50px;
 }
+.header__select-burger {
+  display: none;
+  position: relative;
+}
+@media screen and (max-width: 540px) {
+  .header__select-burger {
+    display: block;
+    padding-right: 40px;
+  }
+  .header__select-burger::before {
+    position: absolute;
+    top: 8px;
+    font-family: icon;
+    content: "\e910";
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .header__select-burger:hover::before {
+    color: #6E6E6E;
+  }
+}
 .header-row {
   display: flex;
   align-items: center;
