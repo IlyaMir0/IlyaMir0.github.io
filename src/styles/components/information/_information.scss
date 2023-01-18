@@ -126,8 +126,9 @@
 
 .formfield {
     position: relative;
-
+    
     &::before {
+        font-family: icon;
         position: absolute;
         right: 20px;
         top: 15px;

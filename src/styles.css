@@ -12,7 +12,6 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  
 }
 
 .header__select-cart__count, .header__select-favorite__count {
@@ -1056,6 +1055,7 @@
   position: relative;
 }
 .formfield::before {
+  font-family: icon;
   position: absolute;
   right: 20px;
   top: 15px;
