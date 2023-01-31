@@ -21,10 +21,7 @@ ymaps.ready(function () {
         balloonContent: 'Метка'
     });
 
-    // Добавление метки на карту
     myMap.geoObjects.add(marker);
-
-    // Создание крестика
     var cross = new ymaps.Placemark([55.75, 37.57], {
         iconLayout: 'default#cross',
         iconShape: {
@@ -35,10 +32,7 @@ ymaps.ready(function () {
         }
     });
 
-    // Добавление крестика на карту
     myMap.geoObjects.add(cross);
-
-    // Обновление координат при изменении центра карты
     myMap.events.add('boundschange', function (event) {
         cross.geometry.setCoordinates(event.get('newCenter'));
     });
@@ -49,17 +43,9 @@ ymaps.ready(function () {
     },
 
         {
-            // Опции.
-            // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
-            // Своё изображение иконки метки.
-            iconImageHref: './assets/icons/Pin.png', 
-            // Размеры метки.
+            iconImageHref: './assets/icons/Pin.png',
             iconImageSize: [30, 42],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-
-
         }),
         myMap.geoObjects.add(myPlacemark);
 });
@@ -255,11 +241,11 @@ class Product {
             count: card.querySelector('.js-count'),
             countMinus: card.querySelector('.js-minus'),
             countPlus: card.querySelector('.js-plus'),
-
+            
             decline: card.querySelector('.js-decline'),
             removebuttonMobile: card.querySelector('.js-remove_mobile'),
         }
-
+        
         this.UI.countMinus.addEventListener('click', () => this.onCountMinusClick());
         this.UI.countPlus.addEventListener('click', () => this.onCountPlusClick());
         this.UI.removeButton.addEventListener('click', () => this.onRemoveButtonClick());
@@ -569,7 +555,6 @@ formNumber.addEventListener('submit', function (event) {
         document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
     }
 })
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 let formEmail = document.querySelector('.js-form_email');
 let inputEmail = document.querySelector('.input_email');
 
@@ -616,12 +601,17 @@ formEmail.addEventListener('submit', function (event) {
     }
 })
 
+var formData = new FormData();
+let elements = document.querySelectorAll('.js-card')
+let full = document.querySelector('.js-price-result')
+formData.append('element1', elements.value);
 
-/* let number = document.querySelector('.js-number')
+document.querySelector('.js-submit').addEventListener('click', function () {
+    console.log(elements);
+    console.log(full);
+});
 
-number.addEventListener("keyup", function () {
-    number.value = this.value.replace(/[^\d]/g, "");
-}) */
+
 
 
 
