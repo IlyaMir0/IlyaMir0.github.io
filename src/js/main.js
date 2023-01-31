@@ -4,79 +4,77 @@ let map_1 = document.getElementById('map_1')
 let map_2 = document.getElementById('map_2')
 let mapId = window.innerWidth > 860 ? map_2 : map_1;
 ymaps.ready(function () {
-    myMap = new ymaps.Map(map_1, {
-        center: [32.921574, 45.573856],
-        zoom: 15,
-        controls: [],
-    }, {
-        searchControlProvider: 'yandex#search',
-        suppressMapOpenBlock: true
-    }),
-    
-    myMap.controls.remove('zoomControl');
-    myPlacemark = new ymaps.Placemark([getCoordinates], {
-        hintContent: 'Собственный значок метки',
-        balloonContent: 'Это красивая метка'
-    }, {
-        // Опции.
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#image',
-            // Своё изображение иконки метки.
-<<<<<<< HEAD
-            iconImageHref: './assets/icons/Pin.png',
-=======
-          /*  iconImageHref: './assets/icons/Pin.png', */
->>>>>>> d2fdc48ae53c55dc1e9ed0b4ce0129bb4a5e16b2
-            // Размеры метки.
-            iconImageSize: [30, 42],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [145, 250]
-    });
-    myMap.geoObjects.add(myPlacemark);
     myMap = new ymaps.Map(mapId, {
-        center: [32.921574, 45.573856],
+        center: [59.97, 30.32],
         zoom: 15,
         controls: [],
-    }, {
-        searchControlProvider: 'yandex#search',
-        suppressMapOpenBlock: true
-    }),
-    
-    myMap.controls.remove('zoomControl');
-    myPlacemark = new ymaps.Placemark([getCoordinates], {
+    },
+
+        {
+            searchControlProvider: 'yandex#search',
+            suppressMapOpenBlock: true
+        }),
+
+
+        myMap.controls.remove('zoomControl');
+    var marker = new ymaps.Placemark([55.75, 37.57], {
+        balloonContent: 'Метка'
+    });
+
+    // Добавление метки на карту
+    myMap.geoObjects.add(marker);
+
+    // Создание крестика
+    var cross = new ymaps.Placemark([55.75, 37.57], {
+        iconLayout: 'default#cross',
+        iconShape: {
+            type: 'Rectangle',
+            coordinates: [
+                [-15, -15], [15, 15]
+            ]
+        }
+    });
+
+    // Добавление крестика на карту
+    myMap.geoObjects.add(cross);
+
+    // Обновление координат при изменении центра карты
+    myMap.events.add('boundschange', function (event) {
+        cross.geometry.setCoordinates(event.get('newCenter'));
+    });
+    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
         hintContent: 'Собственный значок метки',
-        balloonContent: 'Это красивая метка'
-    }, {
-        // Опции.
+        balloonContent: 'Это красивая метка',
+        preset: 'islands#redDotIcon',
+    },
+
+        {
+            // Опции.
             // Необходимо указать данный тип макета.
             iconLayout: 'default#image',
             // Своё изображение иконки метки.
-<<<<<<< HEAD
-            iconImageHref: './assets/icons/Pin.png',
-=======
-             /*  iconImageHref: './assets/icons/Pin.png', */
->>>>>>> d2fdc48ae53c55dc1e9ed0b4ce0129bb4a5e16b2
+            iconImageHref: './assets/icons/Pin.png', 
             // Размеры метки.
             iconImageSize: [30, 42],
             // Смещение левого верхнего угла иконки относительно
             // её "ножки" (точки привязки).
-            iconImageOffset: [200, 225]
-    });
-    myMap.geoObjects.add(myPlacemark);
-    
+
+
+        }),
+        myMap.geoObjects.add(myPlacemark);
 });
+
 async function getCoordinates(address) {
     let response = await fetch(`https://geocode-maps.yandex.ru/1.x?apikey=5b7a2a61-13a4-4159-a6aa-02e5d7932fe0&format=json&geocode=${address}&results=1`, {
         method: 'GET'
-    }) 
-/*     return [{
-        GeoObject: {
-            Point: {
-                pos: '32.921574 45.573856'
+    })
+    /*     return [{
+            GeoObject: {
+                Point: {
+                    pos: '32.921574 45.573856'
+                }
             }
-        }
-    }] */
+        }] */
     let data = await response.text();
     let parsed = JSON.parse(data);
     return parsed.response.GeoObjectCollection.featureMember;
@@ -95,8 +93,9 @@ document.querySelector('.js-address').addEventListener('input', async (event) =>
 
 async function handler(address) {
     const coordinates = await getCoordinates(address);
-    myMap.setCenter (coordinates[0].GeoObject.Point.pos.split(' ').map(e => +e).reverse());
+    myMap.setCenter(coordinates[0].GeoObject.Point.pos.split(' ').map(e => +e).reverse());
     console.log(coordinates[0].GeoObject.Point.pos.split(' '))
+
 }
 
 function throttle(func, ms) {
@@ -106,7 +105,7 @@ function throttle(func, ms) {
 
     function wrapper() {
 
-        if (isThrottled) { 
+        if (isThrottled) {
             savedArgs = arguments;
             savedThis = this;
             return;
@@ -117,7 +116,7 @@ function throttle(func, ms) {
         isThrottled = true;
 
         setTimeout(function () {
-            isThrottled = false; 
+            isThrottled = false;
             if (savedArgs) {
                 wrapper.apply(savedThis, savedArgs);
                 savedArgs = savedThis = null;
@@ -176,7 +175,7 @@ class Cart {
     get discount() {
         return this.promoResult + this.share;
     }
-    
+
     get priceResult() {
         return this.price - this.discount + this.deliveryPrice;
     }
@@ -186,12 +185,12 @@ class Cart {
         product.listen((product) => this.update(product));
         this.updateUI();
     }
-    
+
     update(product) {
-        if(product.isDecline) {
+        if (product.isDecline) {
             this.products = this.products.filter(p => p != product);
         }
-        
+
         this.updateUI();
     }
 
@@ -221,18 +220,18 @@ class Product {
     constructor(card) {
         this.initUI(card);
         this.listeners = [];
-        
+
         if (this.UI.priceOld) {
             this.priceOld = +this.UI.priceOld.innerText.replace(' ', '');
         }
 
         else {
-            this.priceOld = +this.UI.priceNew.innerText.replace(' ','')
+            this.priceOld = +this.UI.priceNew.innerText.replace(' ', '')
         }
-        
+
         this.priceNew = +this.UI.priceNew.innerText.replace(' ', '');
         this.count = +this.UI.count.innerText;
-        
+
         this.isRemoved = false;
         this.isDecline = false;
     }
@@ -242,21 +241,21 @@ class Product {
             card: card,
             priceOld: card.querySelector('.js-price-old'),
             priceNew: card.querySelector('.js-price-new'),
-            
+
             removeButton: card.querySelector('.js-remove'),
             recoveryButton: card.querySelector('.js-recovery'),
-    
-            
+
+
             body: card.querySelector('.js-body'),
             banner: card.querySelector('.js-banner'),
-            
+
             priceOldResult: card.querySelector('.js-price-old-result'),
             priceNewResult: card.querySelector('.js-price-new-result'),
-            
+
             count: card.querySelector('.js-count'),
             countMinus: card.querySelector('.js-minus'),
             countPlus: card.querySelector('.js-plus'),
-            
+
             decline: card.querySelector('.js-decline'),
             removebuttonMobile: card.querySelector('.js-remove_mobile'),
         }
@@ -264,9 +263,9 @@ class Product {
         this.UI.countMinus.addEventListener('click', () => this.onCountMinusClick());
         this.UI.countPlus.addEventListener('click', () => this.onCountPlusClick());
         this.UI.removeButton.addEventListener('click', () => this.onRemoveButtonClick());
-        this.UI.recoveryButton.addEventListener('click',  () => this.onRecoveryButtonClick()); 
-        this.UI.decline.addEventListener('click',  () => this.onDeclineButtonClick()); 
-        this.UI.removebuttonMobile.addEventListener('click',  () => this.onMobileButtonClick()); 
+        this.UI.recoveryButton.addEventListener('click', () => this.onRecoveryButtonClick());
+        this.UI.decline.addEventListener('click', () => this.onDeclineButtonClick());
+        this.UI.removebuttonMobile.addEventListener('click', () => this.onMobileButtonClick());
     }
 
     onDeclineButtonClick() {
@@ -309,7 +308,7 @@ class Product {
     }
 
     onCountPlusClick() {
-        const newCount = +this.count+ 1;
+        const newCount = +this.count + 1;
         this.count = newCount;
         this.updateCardUI();
     }
@@ -321,7 +320,7 @@ class Product {
             this.UI.priceOldResult.innerText = formatter(this.priceOldResult);
         }
 
-        if(this.isRemoved) {
+        if (this.isRemoved) {
             this.UI.body.style.display = 'none';
             this.UI.banner.style.display = 'block';
         } else {
@@ -352,44 +351,43 @@ function formatter(number) {
     return number.toLocaleString();
 }
 
-function declOfNum (productCount, text_forms) {  
-    productCount = Math.abs(productCount) % 100; 
+function declOfNum(productCount, text_forms) {
+    productCount = Math.abs(productCount) % 100;
     var n1 = productCount % 10;
     if (productCount > 10 && productCount < 20) { return text_forms[2]; }
     if (n1 > 1 && n1 < 5) { return text_forms[1]; }
     if (n1 == 1) { return text_forms[0]; }
-    return text_forms[2]; 
+    return text_forms[2];
 }
 
 const textarea = document.querySelector(".js-comment");
 const count = document.querySelector(".js-symbols");
 
-    function countLetters() {
+function countLetters() {
     const text = textarea.length;
     const textlength = textarea.value.length;
     count.innerText = `${textlength}`;
-}    
+}
 
-textarea.oninput = function() {
+textarea.oninput = function () {
     this.value = this.value.substr(0, 142)
 }
 
 let form = document.querySelector('.js-form');
-let field = document.querySelector('.field');
-let input = document.querySelector('.order__card-form__promo');
-let inputstyle = input.style;
+let input = document.querySelector('.input');
+/* let inputstyle = input.style; */
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
-    let error = form.querySelectorAll('.error') 
+    let error = form.querySelectorAll('.error')
     for (let i = 0; i < error.length; i++) {
         error[i].remove();
     }
-    let correct = form.querySelectorAll('.correct') 
+    let correct = form.querySelectorAll('.correct')
     for (let i = 0; i < correct.length; i++) {
         correct[i].remove();
     }
-    
+
     let fieldValue = document.forms["form"]["input"].value;
     if (fieldValue == "") {
         event.preventDefault();
@@ -412,19 +410,219 @@ form.addEventListener('submit', function (event) {
         input.classList.remove('correctFocus')
         form.insertAdjacentHTML('beforeend', `<div class = "error"> Купон не найден</div>`)
     }
-  })
+})
+
+let formName = document.querySelector('.js-form_name');
+let inputName = document.querySelector('.input_name');
+
+inputName.addEventListener("keyup", function () {
+    inputName.value = this.value.replace(/[\d]/g, "");
+})
+
+formName.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let error = formName.querySelectorAll('.error')
+    for (let i = 0; i < error.length; i++) {
+        error[i].remove();
+    }
+    let correct = formName.querySelectorAll('.correct')
+    for (let i = 0; i < correct.length; i++) {
+        correct[i].remove();
+    }
+
+    let fieldValue = document.forms["form_name"]["input_name"].value;
+    function validateName(fieldValue) {
+        var pattern = /^[А-Я][а-яА-Я\s-]+$/;
+        return pattern.test(fieldValue);
+    }
+
+    if (fieldValue == "") {
+        event.preventDefault();
+        inputName.classList.add('errorFocus')
+        inputName.classList.remove('correctFocus')
+        formName.insertAdjacentHTML('beforeend', `<div class="error">
+        Заполните поле</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+    if (validateName(fieldValue)) {
+        event.preventDefault();
+        inputName.classList.remove('errorFocus')
+        inputName.classList.add('correctFocus')
+        formName.insertAdjacentHTML('beforeend', `<div class="correct">
+        Имя введено корректно</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+    if (!validateName(fieldValue) && !fieldValue == 0) {
+        event.preventDefault();
+        inputName.classList.add('errorFocus')
+        inputName.classList.remove('correctFocus')
+        formName.insertAdjacentHTML('beforeend', `<div class = "error"> Введите корректное имя</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+})
+
+let formSecondName = document.querySelector('.js-form_secondName');
+let inputSecondName = document.querySelector('.input_secondName');
+
+inputSecondName.addEventListener("keyup", function () {
+    inputSecondName.value = this.value.replace(/[\d]/g, "");
+})
+
+formSecondName.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let error = formSecondName.querySelectorAll('.error')
+    for (let i = 0; i < error.length; i++) {
+        error[i].remove();
+    }
+    let correct = formSecondName.querySelectorAll('.correct')
+    for (let i = 0; i < correct.length; i++) {
+        correct[i].remove();
+    }
+
+    let fieldValue = document.forms["form_secondName"]["input_secondName"].value;
+
+    function validateName(fieldValue) {
+        var pattern = /^[А-Я][а-яА-Я\s-]+$/;
+        return pattern.test(fieldValue);
+    }
+
+    if (fieldValue == "") {
+        event.preventDefault();
+        inputSecondName.classList.add('errorFocus')
+        inputSecondName.classList.remove('correctFocus')
+        formSecondName.insertAdjacentHTML('beforeend', `<div class="error">
+        Заполните поле</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+    if (validateName(fieldValue)) {
+        event.preventDefault();
+        inputSecondName.classList.remove('errorFocus')
+        inputSecondName.classList.add('correctFocus')
+        formSecondName.insertAdjacentHTML('beforeend', `<div class="correct">
+        Фамилия введена корректно</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+    if (!validateName(fieldValue) && !fieldValue == 0) {
+        event.preventDefault();
+        inputSecondName.classList.add('errorFocus')
+        inputSecondName.classList.remove('correctFocus')
+        formSecondName.insertAdjacentHTML('beforeend', `<div class = "error"> Введите корректную фамилию</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+})
+
+let formNumber = document.querySelector('.js-form_number');
+let inputNumber = document.querySelector('.input_number');
+
+inputNumber.addEventListener("keyup", function () {
+    inputNumber.value = this.value.replace(/[^+][^\d]/g, "");
+})
+
+inputNumber.addEventListener("focus", function () {
+    if (inputNumber.value.length === 0) {
+        inputNumber.value = "+7";
+    }
+});
+
+formNumber.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let error = formNumber.querySelectorAll('.error')
+    for (let i = 0; i < error.length; i++) {
+        error[i].remove();
+    }
+    let correct = formNumber.querySelectorAll('.correct')
+    for (let i = 0; i < correct.length; i++) {
+        correct[i].remove();
+    }
+
+    let fieldValue = document.forms["form_number"]["input_number"].value;
+
+    function validatePhone(fieldValue) {
+        var pattern = /^[0-9+]+$/;
+        if (fieldValue.length < 12) {
+            return false;
+        }
+        return pattern.test(fieldValue);
+    }
+
+    if (fieldValue == "") {
+        event.preventDefault();
+        inputNumber.classList.add('errorFocus')
+        inputNumber.classList.remove('correctFocus')
+        formNumber.insertAdjacentHTML('beforeend', `<div class="error">
+        Заполните поле</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+    if (validatePhone(fieldValue)) {
+        event.preventDefault();
+        inputNumber.classList.remove('errorFocus')
+        inputNumber.classList.add('correctFocus')
+        formNumber.insertAdjacentHTML('beforeend', `<div class="correct">
+        Телефон введён корректно</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+    if (!validatePhone(fieldValue) && !fieldValue == 0) {
+        event.preventDefault();
+        inputNumber.classList.add('errorFocus')
+        inputNumber.classList.remove('correctFocus')
+        formNumber.insertAdjacentHTML('beforeend', `<div class = "error"> Введите корректный номер телефона</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+})
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+let formEmail = document.querySelector('.js-form_email');
+let inputEmail = document.querySelector('.input_email');
+
+formEmail.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let error = formEmail.querySelectorAll('.error')
+    for (let i = 0; i < error.length; i++) {
+        error[i].remove();
+    }
+    let correct = formEmail.querySelectorAll('.correct')
+    for (let i = 0; i < correct.length; i++) {
+        correct[i].remove();
+    }
+
+    let fieldValue = document.forms["form_email"]["input_email"].value;
+
+    function validateEmail(fieldValue) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(fieldValue);
+    }
+
+    if (fieldValue == "") {
+        event.preventDefault();
+        inputEmail.classList.add('errorFocus')
+        inputEmail.classList.remove('correctFocus')
+        formEmail.insertAdjacentHTML('beforeend', `<div class="error">
+        Заполните поле</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+    if (validateEmail(fieldValue)) {
+        event.preventDefault();
+        inputEmail.classList.remove('errorFocus')
+        inputEmail.classList.add('correctFocus')
+        formEmail.insertAdjacentHTML('beforeend', `<div class="correct">
+        Почтовый адрес введён корректно</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+    if (!validateEmail(fieldValue) && !fieldValue == 0) {
+        event.preventDefault();
+        inputEmail.classList.add('errorFocus')
+        inputEmail.classList.remove('correctFocus')
+        formEmail.insertAdjacentHTML('beforeend', `<div class = "error"> Введите корректный почтовый адрес</div>`)
+        document.querySelector(".information__form").setAttribute("style", "grid-row-gap: 10px");
+    }
+})
 
 
-let number = document.querySelector('.js-number')
+/* let number = document.querySelector('.js-number')
 
-number.addEventListener("keyup", function() {
+number.addEventListener("keyup", function () {
     number.value = this.value.replace(/[^\d]/g, "");
-})
+}) */
 
 
-document.querySelectorAll('.js-fio').forEach(item => {
-    item.addEventListener("keyup", function(){
-        item.value = this.value.replace(/[\d]/g, "");
-    })
-})
+
 

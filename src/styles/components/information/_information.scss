@@ -9,6 +9,7 @@
 
         &-form {
             position: relative;
+
             &_comment {
                 padding: 0px 4px 0px 4px;
                 text-align: center;
@@ -35,8 +36,9 @@
                 @media screen and (max-width: 1255px) {
                     width: 95%;
                 }
+
                 @media screen and (max-width: 420px) {
-                        padding: 12px 0px 0px 16px;
+                    padding: 12px 0px 0px 16px;
                 }
 
                 &:focus-visible {
@@ -54,6 +56,7 @@
                 }
             }
         }
+
         @media screen and (max-width:420px) {
             font-size: 24px;
             margin-bottom: 24px;
@@ -78,9 +81,10 @@
         grid-column-gap: 20px;
         grid-row-gap: 20px;
         margin-bottom: 20px;
+
         @media screen and (max-width: 520px) {
             grid-template-columns: 1fr;
-            grid-template-rows:  1fr;
+            grid-template-rows: 1fr;
             grid-column-gap: 16px;
         }
     }
@@ -90,26 +94,33 @@
             height: 450px;
 
         }
-        #map_1, #map_2 > ymaps {
+
+        #map_1,
+        #map_2>ymaps {
             border-radius: 5px;
             overflow: hidden;
-            }
+        }
+
         #map_1 {
             display: none;
+
             @media screen and (max-width: 860px) {
                 display: block;
                 margin: 0px auto;
-                max-width: 290px;
+                max-width: 99%;
+                border-radius: 3px;
                 width: 100%;
                 padding-top: 16px;
             }
         }
+
         #map_2 {
             display: block;
+
             @media screen and (max-width: 860px) {
                 display: none;
             }
-        } 
+        }
     }
 
     &__choose {
@@ -126,7 +137,7 @@
 
 .formfield {
     position: relative;
-    
+
     &::before {
         font-family: icon;
         position: absolute;

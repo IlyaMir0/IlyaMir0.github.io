@@ -88,7 +88,10 @@ a:hover {
 .error {
     color: $red;
     padding: 4px 0px 0px 20px;
+    &:last-child {
+        margin-bottom: 20px;
 }
+    }
 
 .correct {
     color: $green;
@@ -110,3 +113,4 @@ a:hover {
         border: 1px solid $green;
     }
 }
+

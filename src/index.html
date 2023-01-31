@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./styles.css">
   <title>TestTask</title>
 </head>
+
 <body>
   <div class="header">
     <div class="header__inner container">
@@ -41,306 +42,378 @@
       </ul>
     </div>
     <div class="order__items">
-        <div class="order__item">
-          <div class="order__item-text">
-            <h1 class="order__item-title">
-              Оформление заказа
-            </h1>
-            <div class="order__item-description">
-              Есть аккаунт? <span class="order__item-description__enter"> Войти </span>
+      <div class="order__item">
+        <div class="order__item-text">
+          <h1 class="order__item-title">
+            Оформление заказа
+          </h1>
+          <div class="order__item-description">
+            Есть аккаунт? <span class="order__item-description__enter"> Войти </span>
+          </div>
+        </div>
+        <h2 class="order__subtitle"> <span class="js-product-count">2</span> <span class="js-declination"> товара
+          </span> на сумму <span class="js-title-price">25 000</span>₽</h2>
+        <div class="order__item-card js-card">
+          <div class="order__item-card__body js-body">
+            <div class="order__item-product">
+              <img src="./assets/images/jacket.png" class="order__item-product__photo">
+              </img>
+              <div class="order__item-product__description">
+                <h4 class="order__item-product__title">
+                  Утепленная стеганная куртка женская Top Hills
+                  <div class="order__item-product_decline js-remove_mobile"></div>
+                </h4>
+                <div class="order__item-product_wrapper">
+                  <div class="order__item-product__property">
+                    <span class="reg12">Артикул</span> 512-05
+                  </div>
+                  <div class="order__item-product__property">
+                    <span class="reg12">Сезон</span> Осень-зима
+                  </div>
+                  <div class="order__item-product__property-size">
+                    <fieldset class="order__item-product_options">
+                      <label class="order__item-product_parent">
+                        <input class="option" type="radio" name="size_1" id="sizeXS_1">
+                        <label class="order__item-product_size" for="sizeXS_1">XS</label>
+                      </label>
+                      <label class="order__item-product_parent ">
+                        <input class="option" type="radio" name="size_1" id="sizeS_1">
+                        <label class="order__item-product_size" for="sizeS_1">S</label>
+                      </label>
+                      <label class="order__item-product_parent ">
+                        <input class="option" type="radio" name="size_1" id="sizeM_1" checked>
+                        <label class="order__item-product_size" for="sizeM_1">M</label>
+                      </label>
+                      <label class="order__item-product_parent ">
+                        <input class="option" type="radio" name="size_1" id="sizeL_1">
+                        <label class="order__item-product_size" for="sizeL_1">L</label>
+                      </label>
+                      <label class="order__item-product_parent ">
+                        <input class="option" type="radio" name="size_1" id="sizeXL_1">
+                        <label class="order__item-product_size" for="sizeXL_1">XL</label>
+                      </label>
+                    </fieldset>
+                  </div>
+                  <div class="order__item-product__choose">
+                    <fieldset class="order__item-product_wrap">
+                      <div>
+                        <input type="radio" name="color" id="color1" checked> <label for="color1"></label>
+                      </div>
+                      <div>
+                        <input type="radio" name="color" id="color2"> <label for="color2"></label>
+                      </div>
+                      <div>
+                        <input type="radio" name="color" id="color3"> <label for="color3"></label>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order__item-property_mobile">
+              <div class="order__item-product__property">
+                <span class="reg12">Артикул</span> 512-05
+              </div>
+              <div class="order__item-product__property">
+                <span class="reg12">Сезон</span> Осень-зима
+              </div>
+              <div class="order__item-product__property-size">
+                <fieldset class="order__item-product_options">
+                  <label class="order__item-product_parent">
+                    <input class="option" type="radio" name="size_1m" id="sizeXS_1">
+                    <label class="order__item-product_size" for="sizeXS_1">XS</label>
+                  </label>
+                  <label class="order__item-product_parent ">
+                    <input class="option" type="radio" name="size_1m" id="sizeS_1">
+                    <label class="order__item-product_size" for="sizeS_1">S</label>
+                  </label>
+                  <label class="order__item-product_parent ">
+                    <input class="option" type="radio" name="size_1m" id="sizeM_1" checked>
+                    <label class="order__item-product_size" for="sizeM_1">M</label>
+                  </label>
+                  <label class="order__item-product_parent ">
+                    <input class="option" type="radio" name="size_1m" id="sizeL_1">
+                    <label class="order__item-product_size" for="sizeL_1">L</label>
+                  </label>
+                  <label class="order__item-product_parent ">
+                    <input class="option" type="radio" name="size_1m" id="sizeXL_1">
+                    <label class="order__item-product_size" for="sizeXL_1">XL</label>
+                  </label>
+                </fieldset>
+              </div>
+              <div class="order__item-product__choose">
+                <fieldset class="order__item-product_wrap">
+                  <div>
+                    <input type="radio" name="color_m" id="color1" checked> <label for=""></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="color_m" id="color2"> <label for=""></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="color_m" id="color3"> <label for=""></label>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <div class="order__item-wrapper">
+              <div class="order__item-price">
+                <div class="order__item-price__old"> <span class="js-price-old">12 000</span> ₽ </div>
+                <h4 class="order__item-price__new"> <span class="js-price-new">10 000</span> ₽ </h4>
+              </div>
+              <div class="order__item-amount">
+                <div class="order__item-amount__minus js-minus"></div>
+                <div class="order__item-number js-count">2</div>
+                <div class="order__item-amount__plus js-plus"></div>
+              </div>
+              <div class="order__item-price">
+                <div class="order__item-price__old"> <span class="js-price-old-result">24 000</span> ₽</div>
+                <h4 class="order__item-price__new"> <span class="js-price-new-result">20 000</span> ₽</h4>
+              </div>
+              <div class="order__item-decline js-remove"></div>
             </div>
           </div>
-          <h2 class="order__subtitle"> <span class="js-product-count">2</span> <span class="js-declination"> товара
-            </span> на сумму <span class="js-title-price">25 000</span>₽</h2>
-          <div class="order__item-card js-card">
-            <div class="order__item-card__body js-body">
-              <div class="order__item-product">
-                <img src="./assets/images/jacket.png" class="order__item-product__photo">
-                </img>
-                <div class="order__item-product__description">
-                  <h4 class="order__item-product__title">
-                    Утепленная стеганная куртка женская Top Hills
-                    <div class="order__item-product_decline js-remove_mobile"></div>
-                  </h4>
-                  <div class="order__item-product_wrapper">
-                    <div class="order__item-product__property">
-                      <span class="reg12">Артикул</span> 512-05
-                    </div>
-                    <div class="order__item-product__property">
-                      <span class="reg12">Сезон</span> Осень-зима
-                    </div>
-                    <div class="order__item-product__property-size">
-                      <div class="order__item-product__property-size__choice">XS</div>
-                      <div class="order__item-product__property-size__choice">S</div>
-                      <div class="order__item-product__property-size__choice active">M</div>
-                      <div class="order__item-product__property-size__choice">L</div>
-                      <div class="order__item-product__property-size__choice">XL</div>
-                    </div>
-                    <div class="order__item-product__choose">
-                      <fieldset class="order__item-product_wrap">
-                        <div>
-                          <input type="radio" name="color" id="color1" checked> <label for="color1"></label>
-                        </div>
-                        <div>
-                          <input type="radio" name="color" id="color2"> <label for="color2"></label>
-                        </div>
-                        <div>
-                          <input type="radio" name="color" id="color3"> <label for="color3"></label>
-                        </div>
-                      </fieldset>
-                    </div>
-                  </div>
+          <div class="js-banner" style="display: none;">
+            <div class="order__item-banner">
+              <div class="order__item-banner__text">
+                <div class="order__item-banner__text-information">
+                  Товар <b>Утепленная стеганная куртка женская Top Hills</b> был удален из корзины.
                 </div>
-              </div>
-              <div class="order__item-property_mobile">
-                <div class="order__item-product__property">
-                  <span class="reg12">Артикул</span> 512-05
-                </div>
-                <div class="order__item-product__property">
-                  <span class="reg12">Сезон</span> Осень-зима
-                </div>
-                <div class="order__item-product__property-size">
-                  <div class="order__item-product__property-size__choice">XS</div>
-                  <div class="order__item-product__property-size__choice">S</div>
-                  <div class="order__item-product__property-size__choice active">M</div>
-                  <div class="order__item-product__property-size__choice">L</div>
-                  <div class="order__item-product__property-size__choice">XL</div>
-                </div>
-                <div class="order__item-product__choose">
-                  <fieldset class="order__item-product_wrap">
-                    <div>
-                      <input type="radio" name="color_m" id="color1" checked> <label for=""></label>
-                    </div>
-                    <div>
-                      <input type="radio" name="color_m" id="color2"> <label for=""></label>
-                    </div>
-                    <div>
-                      <input type="radio" name="color_m" id="color3"> <label for=""></label>
-                    </div>
-                  </fieldset>
-                </div>
-              </div>
-              <div class="order__item-wrapper">
-                <div class="order__item-price">
-                  <div class="order__item-price__old"> <span class="js-price-old">12 000</span> ₽ </div>
-                  <h4 class="order__item-price__new"> <span class="js-price-new">10 000</span> ₽ </h4>
-                </div>
-                <div class="order__item-amount">
-                  <div class="order__item-amount__minus js-minus"></div>
-                  <div class="order__item-number js-count">2</div>
-                  <div class="order__item-amount__plus js-plus"></div>
-                </div>
-                <div class="order__item-price">
-                  <div class="order__item-price__old"> <span class="js-price-old-result">24 000</span> ₽</div>
-                  <h4 class="order__item-price__new"> <span class="js-price-new-result">20 000</span> ₽</h4>
-                </div>
-                <div class="order__item-decline js-remove"></div>
-              </div>
-            </div>
-            <div class="js-banner" style="display: none;">
-              <div class="order__item-banner">
-                <div class="order__item-banner__text">
-                  <div class="order__item-banner__text-information">
-                    Товар <b>Утепленная стеганная куртка женская Top Hills</b> был удален из корзины.
-                  </div>
-                  <div class="order__item-banner__text-restore js-recovery">Восстановить.</div>
-                  <div class="order__item-banner__text-decline js-decline"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="order__item-card js-card">
-            <div class="order__item-card__body js-body">
-              <div class="order__item-product">
-                <img src="./assets/images/hat.png" class="order__item-product__photo"></img>
-                <div class="order__item-product__description">
-                  <h4 class="order__item-product__title">
-                    Вязанная шапка Zolla
-                    <div class="order__item-product_decline js-remove_mobile"></div>
-                  </h4>
-                  <div class="order__item-product_wrapper">
-                    <div class="order__item-product__property">
-                      <span class="reg12">Артикул</span> 512-05
-                    </div>
-                    <div class="order__item-product__property">
-                      <span class="reg12">Сезон</span> Осень-зима
-                    </div>
-                    <div class="order__item-product__property-size">
-                      <div class="order__item-product__property-size__choice">XS</div>
-                      <div class="order__item-product__property-size__choice">S</div>
-                      <div class="order__item-product__property-size__choice active">M</div>
-                      <div class="order__item-product__property-size__choice disabled">L</div>
-                      <div class="order__item-product__property-size__choice disabled">XL</div>
-                    </div>
-                    <div class="order__item-product__choose">
-                      <fieldset class="order__item-product_wrap">
-                        <div>
-                          <input type="radio" name="hat" id="" checked> <label for="color1"></label>
-                        </div>
-                        <div>
-                      </fieldset>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="order__item-property_mobile">
-                <div class="order__item-product__property">
-                  <span class="reg12">Артикул</span> 512-05
-                </div>
-                <div class="order__item-product__property">
-                  <span class="reg12">Сезон</span> Осень-зима
-                </div>
-                <div class="order__item-product__property-size">
-                  <div class="order__item-product__property-size__choice">XS</div>
-                  <div class="order__item-product__property-size__choice">S</div>
-                  <div class="order__item-product__property-size__choice active">M</div>
-                  <div class="order__item-product__property-size__choice disabled">L</div>
-                  <div class="order__item-product__property-size__choice disabled">XL</div>
-                </div>
-                <div class="order__item-product__choose">
-                  <fieldset class="order__item-product_wrap">
-                    <div>
-                      <input type="radio" id="" checked> <label for=""></label>
-                    </div>
-                    <div>
-                  </fieldset>
-                </div>
-              </div>
-              <div class="order__item-wrapper">
-                <div class="order__item-price">
-                  <h4 class="order__item-price__new"> <span class="js-price-new">500</span>₽</h4>
-                </div>
-                <div class="order__item-amount">
-                  <div class="order__item-amount__minus js-minus"></div>
-                  <div class="order__item-number js-count">1</div>
-                  <div class="order__item-amount__plus js-plus"></div>
-                </div>
-                <div class="order__item-price">
-                  <h4 class="order__item-price__new"> <span class="js-price-new-result">500</span>₽</h4>
-                </div>
-                <div class="order__item-decline js-remove"></div>
-              </div>
-            </div>
-            <div class="js-banner" style="display: none;">
-              <div class="order__item-banner">
-                <div class="order__item-banner__text">
-                  <div class="order__item-banner__text-information">
-                    Товар <b>Утепленная стеганная куртка женская Top Hills</b> был удален из корзины.
-                  </div>
-                  <div class="order__item-banner__text-restore js-recovery">Восстановить.</div>
-                  <div class="order__item-banner__text-decline js-decline"></div>
-                </div>
+                <div class="order__item-banner__text-restore js-recovery">Восстановить.</div>
+                <div class="order__item-banner__text-decline js-decline"></div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="order__item">
-          <div class="order__card">
-            <div class="order__card-items">
-              <h4 class="order__card-title_goods"> Товары </h4>
-              <h4 class="order__card-price_full"> <b><span class="js-price">24 500</span> ₽</b> </h4>
-              <h4 class="order__card-title_discount">Скидка</h4>
-              <h4 class="order__card-price_discount"> - <span class="js-discount">4 500</span> ₽</h4>
-              <h5 class="order__card-title_share">Акции</h5>
-              <h5 class="order__card-price_share"> - <span class="js-share">4 000</span> ₽</h5>
-              <h5 class="order__card-title_promo">Промокод</h5>
-              <h5 class="order__card-price_promo"> - <span class="js-promo">500</span> ₽</h5>
-              <h4 class="order__card-title_delivery">Доставка</h4>
-              <h4 class="order__card-price_delivery"><b> 200 ₽</b> </h4>
-            </div>
-            <div class="order__card-accept">
-              <h4 class="order__card-title">Получить товар со склада</h4>
-              <div class="order__wrapper">
-                <input type="checkbox" id="toggle-button" class="order__wrapper-checkbox">
-                <label for="order__wrapper-checkbox" class="order__wrapper-toggle"></label>
+        <div class="order__item-card js-card">
+          <div class="order__item-card__body js-body">
+            <div class="order__item-product">
+              <img src="./assets/images/hat.png" class="order__item-product__photo"></img>
+              <div class="order__item-product__description">
+                <h4 class="order__item-product__title">
+                  Вязанная шапка Zolla
+                  <div class="order__item-product_decline js-remove_mobile"></div>
+                </h4>
+                <div class="order__item-product_wrapper">
+                  <div class="order__item-product__property">
+                    <span class="reg12">Артикул</span> 512-05
+                  </div>
+                  <div class="order__item-product__property">
+                    <span class="reg12">Сезон</span> Осень-зима
+                  </div>
+                  <div class="order__item-product__property-size">
+                    <fieldset class="order__item-product_options">
+                      <label class="order__item-product_parent">
+                        <input class="option" type="radio" name="size_2" id="sizeXS">
+                        <label class="order__item-product_size" for="sizeXS">XS</label>
+                      </label>
+                      <label class="order__item-product_parent ">
+                        <input class="option" type="radio" name="size_2" id="sizeS">
+                        <label class="order__item-product_size" for="sizeS">S</label>
+                      </label>
+                      <label class="order__item-product_parent ">
+                        <input class="option" type="radio" name="size_2" id="sizeM" checked>
+                        <label class="order__item-product_size" for="sizeM">M</label>
+                      </label>
+                      <label class="order__item-product_parent ">
+                        <input class="option" type="radio" name="size_2" id="sizeL">
+                        <label class="order__item-product_size" for="sizeL">L</label>
+                      </label>
+                      <label class="order__item-product_parent ">
+                        <input class="option" type="radio" name="size_2" id="sizeXL">
+                        <label class="order__item-product_size" for="sizeXL">XL</label>
+                      </label>
+                    </fieldset>
+                  </div>
+                  <div class="order__item-product__choose">
+                    <fieldset class="order__item-product_wrap">
+                      <div>
+                        <input type="radio" name="hat" id="" checked> <label for="color1"></label>
+                      </div>
+                      <div>
+                    </fieldset>
+                  </div>
+                </div>
               </div>
             </div>
-            <p class="order__card-description">Сроки получения могут измениться</p>
-            <div class="order__card-items">
-              <h2 class="order__card-title_total"> <b>Итого:</b> </h2>
-              <h2 class="order__card-price_total"> <b> <span class="js-price-result">20 700</span> ₽</b> </h2>
+            <div class="order__item-property_mobile">
+              <div class="order__item-product__property">
+                <span class="reg12">Артикул</span> 512-05
+              </div>
+              <div class="order__item-product__property">
+                <span class="reg12">Сезон</span> Осень-зима
+              </div>
+              <div class="order__item-product__property-size">
+                <fieldset class="order__item-product_options">
+                  <label class="order__item-product_parent">
+                    <input class="option" type="radio" name="size_2m" id="sizeXS">
+                    <label class="order__item-product_size" for="sizeXS">XS</label>
+                  </label>
+                  <label class="order__item-product_parent ">
+                    <input class="option" type="radio" name="size_2m" id="sizeS">
+                    <label class="order__item-product_size" for="sizeS">S</label>
+                  </label>
+                  <label class="order__item-product_parent ">
+                    <input class="option" type="radio" name="size_2m" id="sizeM" checked>
+                    <label class="order__item-product_size" for="sizeM">M</label>
+                  </label>
+                  <label class="order__item-product_parent ">
+                    <input class="option" type="radio" name="size_2m" id="sizeL">
+                    <label class="order__item-product_size" for="sizeL">L</label>
+                  </label>
+                  <label class="order__item-product_parent ">
+                    <input class="option" type="radio" name="size_2m" id="sizeXL">
+                    <label class="order__item-product_size" for="sizeXL">XL</label>
+                  </label>
+                </fieldset>
+              </div>
+              <div class="order__item-product__choose">
+                <fieldset class="order__item-product_wrap">
+                  <div>
+                    <input type="radio" id="" checked> <label for=""></label>
+                  </div>
+                  <div>
+                </fieldset>
+              </div>
             </div>
-            <form name="form" class="order__card-form js-form">
-              <input class="order__card-form__promo field" name="input" type="text" placeholder="Введите промокод">
-            </form>
-            <button class="order__card-btn js-submit" type="submit"> Оформить заказ</button>
-            <div class="order__card-btn__description">
-              Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с политикой конфиденциальности.
+            <div class="order__item-wrapper">
+              <div class="order__item-price">
+                <h4 class="order__item-price__new"> <span class="js-price-new">500</span>₽</h4>
+              </div>
+              <div class="order__item-amount">
+                <div class="order__item-amount__minus js-minus"></div>
+                <div class="order__item-number js-count">1</div>
+                <div class="order__item-amount__plus js-plus"></div>
+              </div>
+              <div class="order__item-price">
+                <h4 class="order__item-price__new"> <span class="js-price-new-result">500</span>₽</h4>
+              </div>
+              <div class="order__item-decline js-remove"></div>
+            </div>
+          </div>
+          <div class="js-banner" style="display: none;">
+            <div class="order__item-banner">
+              <div class="order__item-banner__text">
+                <div class="order__item-banner__text-information">
+                  Товар <b>Утепленная стеганная куртка женская Top Hills</b> был удален из корзины.
+                </div>
+                <div class="order__item-banner__text-restore js-recovery">Восстановить.</div>
+                <div class="order__item-banner__text-decline js-decline"></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="information__item">
-          <div class="infomation__items">
-            <h2 class="information__title">
-              Контактные данные
-            </h2>
-            <div class="information__form">
-              <div class="formfield formfield_error">
-                <input class="formfield__input js-fio" type="text" name="name" placeholder="Имя">
+      </div>
+      <div class="order__item">
+        <div class="order__card">
+          <div class="order__card-items">
+            <h4 class="order__card-title_goods"> Товары </h4>
+            <h4 class="order__card-price_full"> <b><span class="js-price">24 500</span> ₽</b> </h4>
+            <h4 class="order__card-title_discount">Скидка</h4>
+            <h4 class="order__card-price_discount"> - <span class="js-discount">4 500</span> ₽</h4>
+            <h5 class="order__card-title_share">Акции</h5>
+            <h5 class="order__card-price_share"> - <span class="js-share">4 000</span> ₽</h5>
+            <h5 class="order__card-title_promo">Промокод</h5>
+            <h5 class="order__card-price_promo"> - <span class="js-promo">500</span> ₽</h5>
+            <h4 class="order__card-title_delivery">Доставка</h4>
+            <h4 class="order__card-price_delivery"><b> 200 ₽</b> </h4>
+          </div>
+          <div class="order__card-accept">
+            <h4 class="order__card-title">Получить товар со склада</h4>
+            <div class="order__wrapper">
+              <input type="checkbox" id="toggle-button" class="order__wrapper-checkbox">
+              <label for="order__wrapper-checkbox" class="order__wrapper-toggle"></label>
+            </div>
+          </div>
+          <p class="order__card-description">Сроки получения могут измениться</p>
+          <div class="order__card-items">
+            <h2 class="order__card-title_total"> <b>Итого:</b> </h2>
+            <h2 class="order__card-price_total"> <b> <span class="js-price-result">20 700</span> ₽</b> </h2>
+          </div>
+          <form name="form" class="order__card-form js-form">
+            <input class="order__card-form__promo input" name="input" type="text" placeholder="Введите промокод">
+          </form>
+          <button class="order__card-btn js-submit" type="submit"> Оформить заказ</button>
+          <div class="order__card-btn__description">
+            Нажимая кнопку “Оформить заказ”, Вы соглашаетесь с политикой конфиденциальности.
+          </div>
+        </div>
+      </div>
+      <div class="information__item">
+        <div class="infomation__items">
+          <h2 class="information__title">
+            Контактные данные
+          </h2>
+          <div class="information__form">
+            <div class="formfield">
+              <form action="" name="form_name" class="order__card-form js-form_name">
+                <input class="formfield__input input_name" type="text" name="input_name" placeholder="Имя">
                 <span class="formfield__placeholder">
                   Имя
                 </span>
-                <span class="formfield__label"></span>
-              </div>
-              <div class="formfield">
-                <input class="formfield__input js-fio" type="text" name="second-name" placeholder="Фамилия">
+              </form>
+            </div>
+            <div class="formfield">
+              <form action="" name="form_secondName" class="order__card-form js-form_secondName">
+                <input class="formfield__input input_secondName" type="text" name="input_secondName"
+                  placeholder="Фамилия">
                 <span class="formfield__placeholder">
                   Фамилия
                 </span>
-              </div>
-              <div class="formfield formfield__error">
-                <input class="formfield__input js-number" type="text" name="fio" placeholder="Телефон">
+              </form>
+            </div>
+            <div class="formfield">
+              <form action="" name="form_number" class="order__card-form js-form_number">
+                <input class="formfield__input input_number" type="text" name="input_number" placeholder="Телефон">
                 <span class="formfield__placeholder">
                   Телефон
                 </span>
-                <span class="formfield__label">
-                  erorr text
-                </span>
-              </div>
-              <div class="formfield">
-                <input class="formfield__input" type="text" name="fio" placeholder="Email">
+              </form>
+            </div>
+            <div class="formfield">
+              <form action="" name="form_email" class="order__card-form js-form_email">
+                <input class="formfield__input input_email" type="text" name="input_email" placeholder="Email">
                 <span class="formfield__placeholder">
                   Email
                 </span>
+              </form>
+            </div>
+          </div>
+          <div class="formfield icon-search">
+            <input class="formfield__input js-address" type="text" name="address" placeholder="Адрес доставки">
+            <span class="formfield__placeholder">
+              Адрес доставки
+            </span>
+            <div class="information__item">
+              <div id="map_1" class="information__item-map">
               </div>
             </div>
-            <div class="formfield icon-search">
-              <input class="formfield__input js-address" type="text" name="address" placeholder="Адрес доставки">
-              <span class="formfield__placeholder">
-                Адрес доставки
-              </span>
-              <div class="information__item">
-                <div id="map_1" class="information__item-map">
-                </div>
+          </div>
+          <h2 class="information__title">Оплата</h2>
+          <fieldset class="information__choose-wrap">
+            <div class="informtaion__choose">
+              <div class="information__choose-radio">
+                <input type="radio" name="rb" id="payment" checked> <label for="">Наличными курьеру</label>
               </div>
-            </div>
-            <h2 class="information__title">Оплата</h2>
-            <fieldset class="information__choose-wrap">
-              <div class="informtaion__choose">
-                <div class="information__choose-radio">
-                  <input type="radio" name="rb" id="payment" checked> <label for="">Наличными курьеру</label>
-                </div>
-                <div class="information__choose-radio">
-                  <input type="radio" name="rb" id="payment"> <label for="">Картой курьеру</label>
-                </div>
-                <div class="information__choose-radio">
-                  <input type="radio" name="rb" id="payment"> <label for="">Картой онлайн</label>
-                </div>
-            </fieldset>
-          </div>
-          <h2 class="information__title">Комментарии к заказу</h2>
-          <form class="information__title-form" action="./" method="post">
-            <textarea class="information__title-form_text js-comment" onkeydown="countLetters();" required
-              placeholder="Комментарий к заказу" name="comment" id="comment"></textarea>
-            <label class="information__title-form_comment" for="comment">Комментарий</label>
-            <div class="information__subtitle ">Использовано <span class="js-symbols">0</span>/142 символов</div>
-          </form>
+              <div class="information__choose-radio">
+                <input type="radio" name="rb" id="payment"> <label for="">Картой курьеру</label>
+              </div>
+              <div class="information__choose-radio">
+                <input type="radio" name="rb" id="payment"> <label for="">Картой онлайн</label>
+              </div>
+          </fieldset>
         </div>
-        <div class="information__item">
-          <div id="map_2" class="information__item-map">
-          </div>
+        <h2 class="information__title">Комментарии к заказу</h2>
+        <form class="information__title-form" action="./" method="post">
+          <textarea class="information__title-form_text js-comment" onkeydown="countLetters();" required
+            placeholder="Комментарий к заказу" name="comment" id="comment"></textarea>
+          <label class="information__title-form_comment" for="comment">Комментарий</label>
+          <div class="information__subtitle ">Использовано <span class="js-symbols">0</span>/142 символов</div>
+        </form>
+      </div>
+      <div class="information__item">
+        <div id="map_2" class="information__item-map">
         </div>
+      </div>
     </div>
 
     </div>
